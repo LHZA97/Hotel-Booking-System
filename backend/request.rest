@@ -1,0 +1,31 @@
+GET http://localhost:5000/guests
+###
+GET  http://localhost:5000/rooms
+
+###
+GET http://localhost:5000/guests
+Authorization: : token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsIm5hbWUiOiJCb2IiLCJlbWFpbCI6ImJvYkBnbWFpbC5jb20iLCJpYXQiOjE2MzcxMjU5NDksImV4cCI6MTYzNzEyNTk2OX0.XMBvtuBha2511cjVmh6poUwBXf6C1w4T_ey8Uv_QBi4
+
+
+###
+POST http://localhost:5000/guests
+Content-Type: application/json
+
+{
+    "name":"luqman",
+    "email":"bobby@gmail.com",
+    "password":"luqmanulhakim1",
+    "confPassword":"luqmanulhakim1"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"bob@gmail.com",
+    "password":"luqmanulhakim1"
+}
+
+###
+GET http://localhost:5000/token
