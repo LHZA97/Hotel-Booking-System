@@ -59,14 +59,13 @@ function Navbar() {
                 Dashboards
               </Link>
             </li>
-
             <li>
               <Link
-                to='/form'
+                to='/login'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Signup
+                Login
               </Link>
             </li>
           </ul>

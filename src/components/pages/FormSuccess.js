@@ -5,8 +5,9 @@ const FormSuccess = () => {
   return (
     <div className='form-content-right'>
       <h1 className='form-success'>We have received your request!</h1>
-      <image src="img/snapseed.svg" alt="success-image" />
-    </div>
+      <image src="img/img-3.svg" alt="success-image" 
+       className="form-img-2" />
+       </div>
   );
 };
 
