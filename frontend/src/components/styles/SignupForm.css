@@ -1,0 +1,124 @@
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.form-registercontainer {
+    margin: 100px auto;
+    width: 600px ;
+    box-shadow: 0 5px 8px 0 rgba(224, 90, 90, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+    height: 1000px;
+    
+  }
+  
+  
+  .form-registercontent {
+    background: #303B3A;
+    width: 130%;
+    height: 100%;
+    position: absolute;
+    margin-top: 50px;
+  }
+  
+  .form {
+    
+    position: relative;
+    margin-top: 50px;
+    top: 20%;
+    left: 40%;
+    transform: translate(-45%, -45%);
+    width: 90%;
+    height: 100%;
+    background: #303B3A;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .form-inputs {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    width: 80%;
+  }
+  
+  .form-inputs p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #f00e0e;
+  }
+  
+  .form-label {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .form-input {
+    display: block;
+    padding-left: 10px;
+    outline: none;
+    border-radius: 2px;
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 1.2rem;
+  }
+  
+  .form-input::placeholder {
+    color: #595959;
+    font-size: 15px;
+  }
+  
+  .form-input-btn {
+    width: 80%;
+    height: 50px;
+    margin-top: 1.2rem;
+    border-radius: 2px;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .form-input-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 143, 255) 0%,
+      rgb(12, 99, 250) 100%
+    );
+    transition: all 0.4s ease-out;
+  }
+  
+  .form-input-login {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #fff;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .form-input-login a {
+    text-decoration: none;
+    color: #27cdff;
+    font-weight: 600;
+  }
