@@ -1,5 +1,8 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
+import Reservation from "./Reservation.Model.js";
+import Rooms from "./Room.Model.js";
+
 
 const { DataTypes } = Sequelize;
 
@@ -41,5 +44,12 @@ const Guests = db.define('guests', {
 },{
     freezeTableName: true
 })
+
+
+// //Guests.associate = models =>{
+//     Guests.belongsTo(Reservation, {foreignKey: 'guestid'} )
+// //}
+
+
 
 export default Guests;

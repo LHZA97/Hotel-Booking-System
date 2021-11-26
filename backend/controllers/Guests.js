@@ -33,7 +33,7 @@ export const register = async(req,res)=>{
     else if(password.length < 10) return res.status(400) //.json({msg: "Please put more than 10 words or numbers!"});
     else if(contact.length < 10) return res.status(400) //.json({msg: "Please put the correct contact number"});
     else if(!/\S+@\S+\.\S+/.test(email)) return res.status(400) //.json({msg: "Invalid email address"})
-    else if(!(email && name && password && confPassword )) return res.status(400) //.json({msg: "Please fill in the details"})
+    else if(!(email && name && password && confPassword )) return res.status(400).json({msg: "Please fill in the details"})
     else if(countEmail > 0) return res.status(400).json({msg: "Email already exist"})
     
     
@@ -54,25 +54,27 @@ export const register = async(req,res)=>{
     
 }
 
-export const login = async(req, res, next)=>{
+export const login = async(req, res)=>{
     try{
         const guest = await Guests.findAll({
             where:{
-                email: req.body.email
+                email: req.body.email,
             }
         });
-        
-        const match = await bcrypt.compare(req.body.password, guest[0].password);
+        const {password} = req.body;
+
+        const match = await bcrypt.compare(req.body.password, guest[0].password); 
         if(!match) return res.status(400).json({msg:"Wrong Password"});
         
         const userID = guest[0].id;
         const name = guest[0].name;
         const email = guest[0].email;
+        const contact = guest[0].contact;
 
-        const accessToken = jwt.sign({userID, name, email}, process.env.ACCESS_TOKEN_SECRET, {
+        const accessToken = jwt.sign({userID, name, email, contact}, process.env.ACCESS_TOKEN_SECRET, {
             expiresIn: '20s'
         });
-        const refreshToken = jwt.sign({userID, name, email}, process.env.REFRESH_TOKEN_SECRET, {
+        const refreshToken = jwt.sign({userID, name, email, contact}, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '1d'
         });
         await Guests.update({refresh_token: refreshToken}, {
@@ -86,9 +88,8 @@ export const login = async(req, res, next)=>{
         });
         res.json({accessToken})
         
-        next()
     } catch(error){
-        res.status(404).json({msg:"Email doesn't exist"})
+        res.status(404) //.json({msg:"Email doesn't exist"})
     }
 }
 

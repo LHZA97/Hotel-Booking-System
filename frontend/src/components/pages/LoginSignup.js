@@ -1,6 +1,6 @@
 import React from 'react';
-import validate from './validateLoginInfo';
-import useForm from './useForm';
+import validate from '../utils/validateLoginInfo';
+import useForm from '../utils/useForm';
 import '../styles/LoginForm.css';
 import {Link} from 'react-router-dom';
 
@@ -14,10 +14,10 @@ const LoginSignup = () => {
     <video src='/videos/video-3.mp4' autoPlay loop muted />
       <div className='form-container'>
       <form onSubmit={Login} className='form' noValidate>
-      <p>{message.toUpperCase()}</p>
         <h1>
            Login your account 
         </h1>
+        <p>{message}</p>
         <div className='form-inputs'>
           <label className='form-label'>Email</label>
           <input

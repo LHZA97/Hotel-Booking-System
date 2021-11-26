@@ -1,6 +1,6 @@
 import React from 'react';
-import validate from './validateInfo';
-import useForm from './useForm';
+import validate from '../utils/validateInfo';
+import useForm from '../utils/useForm';
 import '../styles/SignupForm.css';
 import {Link} from 'react-router-dom';
 

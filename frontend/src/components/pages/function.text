@@ -1,0 +1,57 @@
+const [guestname, setGuestname] = useState('');
+const [checkout, setCheckout] = useState('');
+const [checkin, setCheckin] = useState('');
+
+const addCard = () => {
+    const newCards = [...cards, Math.floor(Math.random() * 100)];
+    setCards(newCards);
+};
+
+const removeCard = (cardIndex) => {
+    const newCards = cards.filter((card, index) => index !== cardIndex);
+    setCards(newCards);
+};
+
+
+const [{items}, setItems] = useState({ items: [] });
+  const addItem = () => {
+    items.push(
+        <div key={items.length}>
+        <div className="container" style={{paddingTop:100}}>
+           <h1> WELCOME BACK: {name.toUpperCase()} </h1>         
+
+           <section className="component">
+           
+            <div className="card">
+                <h2>BOOKING FORM</h2>
+                <form>
+                <h3 className="line" onChange={(e)=>setGuestname(e.target.value)} >GUEST NAME: {name.toUpperCase()}</h3>
+                <h3 className="line" onChange={(e)=>setRoomtype(e.target.value)}>ROOMS TYPE:</h3>
+                <div className="line">
+                    <h3 className="line" style={{paddingRight:200}}>CHECKIN:</h3>
+                    <h3 className="tall" >CHECKOUT:</h3>
+                </div>
+                <div className="line">
+                    <input className="litle" type="date" onChange={(e)=>setCheckin(e.target.value)}/>
+                    <input className="tall" type="date" onChange={(e)=>setCheckin(e.target.value)}/>
+                </div>
+                <button type="submit" className="valid-button" onClick={booking}>BOOKING ROOM</button>
+                </form>
+            </div>
+            </section>
+
+        </div>
+        </div>);
+    setItems({ items: [...items] });
+  };
+
+
+
+
+
+
+
+
+<button onClick={addItem} />
+      {items}
+</div>

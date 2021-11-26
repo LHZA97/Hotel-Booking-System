@@ -2,10 +2,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useHistory} from 'react-router-dom';
 
+
 const useForm = (validate) => {
 
   const [, setIsSubmitting] = useState(false);
   const history = useHistory();
+
 
   
   //Register InputChange RegisterSubmit
@@ -46,7 +48,7 @@ const useForm = (validate) => {
 
 
   //Login InputChange, LoginSubmit
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   
   const [loginErrors, setLoginErrors] = useState({});
   const [loginValues, setLoginInput] = useState({  
@@ -70,12 +72,13 @@ const useForm = (validate) => {
         await axios.post('/login', {
           ...loginValues
         })
-        setLogin(true);
-        history.push('/dashboards');  
-        console.log(loginValues);
+        setLogin(true)
+        history.push('/dashboards');
+        
     } catch (error) {
         if (error.response) {
             console.log(error.response.data.msg);
+            setMessage(error.response.data.msg);
         }
     }
   }
@@ -89,7 +92,7 @@ const useForm = (validate) => {
   }
 
 
-  return { handleRegisterChange, handleLoginChange, Register, Login, Logout, values, loginValues, errors, loginErrors, login, message };
+  return { handleRegisterChange, handleLoginChange, Register, Login, Logout, values, loginValues, errors, loginErrors, login, message, setLogin };
 };
 
 export default useForm;

@@ -1,6 +1,7 @@
 import express from "express";
 import { getGuests, register, login, logout } from "../controllers/Guests.js";
 import { getRooms, upload, addRoom, getOneRoom } from "../controllers/Rooms.js";
+import { bookRoom, newBooked} from "../controllers/Reservation.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/Refresh.Token.js";
 
@@ -15,5 +16,8 @@ router.delete('/logout', logout);
 router.get('/rooms', getRooms);
 router.get('/:id', getOneRoom)
 router.post('/addRoom', upload, addRoom)
+
+router.post('/createbooking', newBooked);
+router.get('/getbooking/:gid/:rid', bookRoom);
 
 export default router;

@@ -1,20 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect, Route} from 'react-router-dom';
-import useForm from './pages/useForm'
+import Auth from './utils/Auth';
 
-const ProtectedRoute = ({ component: Component, ...rest}) => {
-    const {login} = useForm();
-    const isAuthenticated = {login}
-    
-    console.log('this', isAuthenticated)
+const ProtectedRoute = ({children, ...rest}) => {
+   const {token} = useContext(Auth)
+   return (
+    <Route {...rest}>{!token ? <Redirect to="/login"/> : children}</Route>
+   )
+}
 
-    return (
-     <Route 
-     {...rest} 
-     render={props => 
-        isAuthenticated ? <Component {...rest} {...props}/> : <Redirect to='/login'/>
-     }/>   
-    );
-
-    }
 export default ProtectedRoute;

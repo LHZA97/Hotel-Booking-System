@@ -43,7 +43,7 @@ function Footer() {
       </div>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              Tropical Resort
+              HAZBOBBY Resort
               <i class='fab fa-typo3' />
             </Link>
           </div>

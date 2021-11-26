@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import './styles/Cards.css';
-import CardItem from './CardItem';
+import '../styles/Cards.css';
+import CardItem from '../CardItem';
 import axios from 'axios';
-import './styles/App.css';
+import '../styles/App.css';
 
 export default function RoomsList() {
   

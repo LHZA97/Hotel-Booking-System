@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './styles/HeroSection.css'
-import { Button } from './Button';
+import '../styles/HeroSection.css'
+import { Button } from '../Button';
 
 
 
@@ -43,7 +43,7 @@ const RoomDetail = () => {
     return (
         <>
         
-            <div className='hero-containerleft' style={{ backgroundImage: `src:(require(http://localhost:5000/${image}))`, backgroundSize: 'auto' }}>
+            <div className='hero-containerleft' style={{ backgroundImage: `src(require(http://localhost:5000/${image}))`, backgroundSize: 'auto' }}>
             <h2>{type.toUpperCase()}</h2>
             <h2>PRICE PER NIGHT: RM{price}</h2>
             <h2>ROOM SIZES: {sizes}</h2>
@@ -65,7 +65,7 @@ const RoomDetail = () => {
                 className='btns'   
                 buttonStyle='btn--outline'
                 buttonSize='btn--large'
-                link='/dashboards'
+                link={`/dashboards/${type}`}
                 >
                 BOOK NOW
                 <i className='far fa-play-circle' />
