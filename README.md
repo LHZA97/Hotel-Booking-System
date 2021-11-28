@@ -2,10 +2,10 @@
 
 **_About Project_**
           
-    Hotel booking system is a software application that is implemented for the hotels to allow guests making room reservation 
-    anywhere and anytime worldwide via a website without the hassle of physically meeting with them. 
-    The objective of this project is to develop system that make it easy for customers to make reservations with feature of having
-    their own dashboard of each user and to provide information about each of the hotel rooms.
+    Hotel booking system is a software application that is implemented for the hotels to allow guests making room 
+    reservation anywhere and anytime worldwide via a website without the hassle of physically meeting with them. 
+    The objective of this project is to develop system that make it easy for customers to make reservations with 
+    feature of having their own dashboard of each user and to provide information about each of the hotel rooms.
     
 </br>
 
